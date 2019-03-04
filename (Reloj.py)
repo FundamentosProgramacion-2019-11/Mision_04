@@ -1,0 +1,86 @@
+#José Isidro Sánchez Vázquez
+#Reloj de 12 horas
+import turtle
+
+def calculadorDeSeg(seg):
+    if 0 <= seg < 60:
+        segundo = seg
+    else:
+        segundo = "Error"
+    return segundo
+
+
+def calcularMin(seg,min):
+    if 0<=min<60:
+        minutos = min
+    else:
+        minutos = "ERROR"
+    return minutos
+
+
+def calcularHora(horas,min):
+    if 1<=horas<=12:
+        hora = horas
+    elif 13<=horas<=23:
+        hora = horas-12
+    elif 0==horas:
+        hora = 12+horas
+    else:
+        hora = "ERROR"
+    return hora
+
+
+def dibujarReloj(horas,min):
+    turtle.speed(0)
+    turtle.hideturtle()
+    turtle.penup()
+    turtle.goto(0, -180)
+    turtle.pendown()
+    turtle.circle(180)
+    for i in range(1, 13):
+        turtle.pensize(3)
+        turtle.penup()
+        turtle.goto(0, 0)
+        turtle.right(30)
+        turtle.forward(150)
+        turtle.pendown()
+        turtle.forward(30)
+
+    for i in range(1, 61):
+        turtle.pensize(2)
+        turtle.penup()
+        turtle.goto(0, 0)
+        turtle.right(6)
+        turtle.forward(170)
+        turtle.pendown()
+        turtle.forward(10)
+    turtle.speed(0)
+    turtle.showturtle()
+    turtle.penup()
+    turtle.goto(0, 0)
+    turtle.setheading(90)
+    turtle.right(0.5 * (60 * horas + min))
+    turtle.pendown()
+    turtle.forward(100)
+    turtle.penup()
+    turtle.goto(0, 0)
+    turtle.setheading(90)
+    turtle.right(min * 360 / 60)
+    turtle.pendown()
+    turtle.forward(130)
+    turtle.exitonclick()
+
+
+def main():
+    horas=int(input("Teclea la hora: "))
+    min=int(input("Teclea los minutos: "))
+    seg=int(input("Teclea los segundos"))
+    segundos = calculadorDeSeg(seg)
+    minuto = calcularMin(seg,min)
+    hora = calcularHora(horas,min)
+    print(hora,":",minuto,":",segundos, "hrs.")
+    dibujarReloj(hora, min)
+    
+    
+print("Todos los datos que se agregaran a continuacion seran para un reloj de 24 horas, donde media noche es las 0:00:00hrs ")
+main()

@@ -1,0 +1,26 @@
+#Jose Isidro Sánchez Vázquez
+#Programa para calcular tipos de triangulos
+import math
+
+def calcularTriangulo(lado1,lado2,lado3,anguloX,anguloY,anguloZ):
+    if lado1 == lado3 and lado1== lado2:
+        triangulo = "Es un triangulo equilatero"
+    elif lado1 == lado2 or lado1==lado3 or lado2==lado3:
+        triangulo = "Es un triangulo isosceles"
+    elif (math.sqrt(lado1**2+lado2**2))== lado3 or (math.sqrt(lado1**2+lado3**2))== lado2 or (math.sqrt(lado3**2+lado2**2))== lado1:
+        triangulo = "Es un triangulo rectangulo"
+    else:
+        triangulo = "otro"
+    return triangulo
+
+
+def main():
+    lado1 = float(input("Teclea el valor del primer lado del triangulo: "))
+    lado2 = float(input("Teclea el valor del segundo lado del triangulo: "))
+    lado3 = float(input("Teclea el valor del tercer lado del triangulo: "))
+    anguloX = math.degrees(math.atan(lado1/lado2))
+    anguloY = math.degrees(math.atan(lado2 / lado3))
+    anguloZ = math.degrees(math.atan(lado3 / lado1))
+    triangulo = calcularTriangulo(lado1,lado2,lado3,anguloX,anguloY,anguloZ)
+    print(triangulo)
+main()

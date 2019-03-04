@@ -1,0 +1,66 @@
+#José Isidro Sanchez Vázquez
+#Programa para el calculo de venta de sofware
+
+
+def calculadorDelCostoMenorDe10(paquetes):
+    costo=paquetes*2300
+    return costo
+
+
+def calculadorDelCostoMenorDe20(paquetes):
+    cost=paquetes*2300
+    porcentaje=cost*.15
+    costo=cost-porcentaje
+    return costo
+
+
+def calculadorDelCostoMenorDe50(paquetes):
+    cost=paquetes*2300
+    porcentaje=cost*.22
+    costo=cost-porcentaje
+    return costo
+
+
+def calculadorDelCostoMenorDe100(paquetes):
+    cost=paquetes*2300
+    porcentaje=cost*.35
+    costo=cost-porcentaje
+    return costo
+
+
+def calculadorDelCostoMayorDe99(paquetes):
+    cost=paquetes*2300
+    porcentaje=cost*.42
+    costo=cost-porcentaje
+    return costo
+
+
+def elegir(Nopaquetes,costoMenorDe10,costoMenorDe20,costoMenorDe50,costoMenorDe100,costoMayorDe99):
+    N=Nopaquetes
+    if N <= 0:
+        costo = ("ERROR")
+    elif N < 10:
+        costo = costoMenorDe10
+    elif N < 20:
+        costo = costoMenorDe20
+    elif N < 50:
+        costo = costoMenorDe50
+    elif N < 100:
+        costo = costoMenorDe100
+    elif N > 99:
+        costo = costoMayorDe99
+    return costo
+
+
+def main():
+    NoPaquetes=int(input("Teclea el numero de paquetes comprados: "))
+    costoMenorDe10 = calculadorDelCostoMenorDe10(NoPaquetes)
+    costoMenorDe20 = calculadorDelCostoMenorDe20(NoPaquetes)
+    costoMenorDe50 = calculadorDelCostoMenorDe50(NoPaquetes)
+    costoMenorDe100 = calculadorDelCostoMenorDe100(NoPaquetes)
+    costoMayorDe99 = calculadorDelCostoMayorDe99(NoPaquetes)
+    costo = elegir (NoPaquetes,costoMenorDe10,costoMenorDe20,costoMenorDe50,costoMenorDe100,costoMayorDe99)
+    print("El costo total es: $%.2f"%(costo))
+
+
+main()
