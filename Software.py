@@ -25,7 +25,7 @@ def contarPaquetes(paq):
 def main():
     paq = int(input("Numero de paquetes: "))
     totalPago = contarPaquetes(paq)
-    print"El total a pagar es", totalPago
+    print("El total a pagar es", totalPago)
 
 
 #Llamamos a la funcion -main-

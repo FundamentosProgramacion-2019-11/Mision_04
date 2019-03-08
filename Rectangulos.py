@@ -43,13 +43,13 @@ def main():
     base2 = int(input("Teclea la base del rectangulo 2: "))
     altura2 = int(input("Teclea la altura del rectangulo 2: "))
     perimetro1 = calcularPerimetro1(base1, altura1)
-    print"Perimetro1:", perimetro1
+    print("Perimetro1:", perimetro1)
     perimetro2 = calcularPerimetro2(base2, altura2)
-    print"Perimetro2:", perimetro2
+    print("Perimetro2:", perimetro2)
     a1 = calcularArea1(base1, altura1)
-    print"Area1:", a1
+    print("Area1:", a1)
     a2 = calcularArea2(base2, altura2)
-    print"Area2:", a2
+    print("Area2:", a2)
     mayor = definirMayor(a1, a2)
     print(mayor)
 

@@ -40,7 +40,7 @@ def main():
     minuto = int(input("Escribe los minutos: "))
     segundos = int(input("Escribe los segundos: "))
     horario = convertirHora(hora)
-    print"Hora: %d:%d:%d" % (horario, minuto, segundos)
+    print("Hora: %d:%d:%d" % (horario, minuto, segundos))
 
 
 #Llamar a la funcion -main-
